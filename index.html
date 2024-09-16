@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <header class="head">
+        <a href="#" class="logo">Ahmed</a>
+        <nav class="navA">
+            <a href="https://drive.google.com/file/d/16c87iMrYCWR0r-slhY--Pm6UG6K7iXh0/view?usp=drive_link" target="_blank">About Me</a>
+            <a href="https://opaque-temper-dfe.notion.site/10212fe02f4f804ea138f9ae33a1dbc5?v=10212fe02f4f81889dcd000c4acb87c1" target="_blank">Blogs</a>
+            <a href="https://opaque-temper-dfe.notion.site/CTF-Challenges-8e8ecaad07ae4dff8f39727a91a930e3" target="_blank">Writups</a>
+
+            <a href="#Contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div>
+            <h2>Hey, I'm Ahmed</h2>
+            <h3>I am a <span id="dynamicText">Junior Penetration Tester</span></h3>
+            <a href="Blog.html" class="main-btn" target="_blank">View My Blogs</a>
+        </div>
+    </section>
+
+    </section>
+
+   
+
+    <section id="Contact" class="contact">
+        <h2 class="title">Get in Touch</h2>
+        <p>Email: <a href="mailto:youremail@example.com">ahmedashraf.cyber@gmail.com
+        </a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-ashraf-678b34258" target="_blank">https://www.linkedin.com/in/ahmed-ashraf-678b34258</a></p>
+    </section>
+
+    <script>
+        const texts = ["Junior Penetration Tester", "CTF Player", "Cybersecurity Enthusiast", "Bug Bounty Hunter"];
+        let index = 0;
+        const dynamicTextElement = document.getElementById("dynamicText");
+
+        function changeText() {
+            dynamicTextElement.classList.add("fade-out");
+            setTimeout(() => {
+                index = (index + 1) % texts.length;
+                dynamicTextElement.textContent = texts[index];
+                dynamicTextElement.classList.remove("fade-out");
+            }, 500);
+        }
+
+        setInterval(changeText, 3000);
+    </script>
+</body>
+</html>
