@@ -11,53 +11,63 @@
 body {
     background-color: #f5f5f5;
     color: #333;
+    min-height: 100vh;
 }
 
-.head {
-    background-color: #383838;
+nav {
+    background: #1a1a1a; 
+    height: 80px;
     width: 100%;
-    position: fixed;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 100px;
-    transition: background-color 0.3s ease, padding 0.3s ease;
+    z-index: 20;
+    
+ 
 }
 
-.head.scrolled {
-    background-color: #212529;
-    padding: 10px 150px;
-}
-
-.logo {
-    text-decoration: none;
-    font-size: 1.8em;
+label.logo {
+    color: #00ff99; 
+    font-size: 25px;
+    line-height: 80px;
+    padding: 0 100px;
     font-weight: bold;
-    color: #9fef00!important;
+}
+
+nav ul {
+    float: right;
+    margin-right: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #00ff99; 
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
     text-transform: uppercase;
 }
 
-.navA a {
-    text-decoration: none;
-    color: #9fef00;
-    font-weight: 600;
-    font-size: 1.1em;
-    padding-left: 30px;
+a.active {
+    color: #00ff99;
+    transition: .5s;
 }
 
-.navA a:hover {
-    color: #000;
+.checkbtn {
+    font-size: 30px;
+    color: #00ff99;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+   
 }
 
-.social-icons a {
-    color: #9fef00;
-    font-size: 1.7em;
-    padding-right: 20px;
-}
-
-.social-icons a:hover {
-    color: #fff;
+#check {
+    display: none;
 }
 
 .main {
@@ -66,124 +76,134 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('cyber.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('cyber.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+    z-index: 1;
 }
 
 .main h2 {
     color: #fff;
     font-size: 3em;
     font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .main h3 {
     color: #fff;
     font-size: 2em;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 0px;
+    display: inline-block;
+    text-align: center;
+
 }
 
-.main-btn {
-    text-decoration: none;
-    color: #fff;
-    background-color: #3a6cf4;
-    font-size: 1.1em;
-    font-weight: 600;
-    padding: 3px 20px;
-    border-radius: 15px;
-    margin-top: 40px;
+
+.main h2, .main h3 {
+    color: #00ff99; 
+    text-shadow: 0 0 10px rgba(0, 255, 153, 0.7); 
+    text-align: center;
 }
 
-.main-btn:hover {
-    background-color: black;
-    transform: scale(1.1);
-    transition: 0.3s;
-}
+#dynamicText {
 
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    margin-left: 5px;
+    color: #00ff99; 
+    text-shadow: 0 0 10px rgba(0, 255, 153, 0.7); 
+}
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
-
-.title {
-    text-align: center;
-    color: #3a6cf4;
-    font-size: 2.2em;
-    font-weight: 800;
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-.projects .content, .skills .content, .certifications .content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.pro-card, .skill-item, .cert-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.pro-card:hover, .skill-item:hover, .cert-item:hover {
-    transform: scale(1.05);
-}
-
-.pro-cat {
-    font-size: 0.9em;
-    color: #333;
-    margin-top: 10px;
-}
-
-.more-details {
-    text-decoration: none;
-    color: #3a6cf4;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-.more-details:hover {
-    color: black;
-}
-
 .contact {
     text-align: center;
     margin: 50px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #1e2321, #333);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact h2 {
+    color: #00ff99;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.contact p {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 10px 0;
 }
 
 .contact a {
-    color: #3a6cf4;
+    color: #00ff99;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contact a:hover {
-    color: #000;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 
-@media (max-width:641px){
-    body{
-        font-size: 12px;
-    }
 
-    .main-content h2{
-        font-size: 0.8em;
-    }
 
-    .main-content h3{
-        font-size: 1.4em;
+@media (max-width: 1050px) {
+    label.logo {
+      padding-left: 30px;
+    }
+    nav ul li a {
+      font-size: 16px;
     }
 }
 
-@media (max-width:300px){
-    body{
-        font-size: 10px;
-     
+@media (max-width: 890px) {
+    .checkbtn {
+      display: block;
     }
+    label.logo {
+      font-size: 30px;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #1a1a1a; 
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+      z-index: 10;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 20px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover,
+    a.active {
+      background: none;
+      color: #00ff99;
+    }
+    #check:checked~ul {
+      left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main h2 {
+        font-size: 2em; 
+    .main h3 {
+        font-size: 1.5em;
+    }
+}
 }
